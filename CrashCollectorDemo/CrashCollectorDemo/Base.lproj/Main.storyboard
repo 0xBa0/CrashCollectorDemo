@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="QyY-1M-Y23">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="ptK-Db-f8e">
+            <objects>
+                <viewController id="nCv-Rh-rgX" customClass="ViewController" customModule="BuglyDemo" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Trv-Bd-8rG">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nEN-uo-ZgS">
+                                <rect key="frame" x="138" y="433" width="138" height="30"/>
+                                <state key="normal" title="点击我进入测试界面"/>
+                                <connections>
+                                    <segue destination="9cg-3i-fAG" kind="show" id="CQj-6p-aou"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="nEN-uo-ZgS" firstAttribute="centerX" secondItem="Trv-Bd-8rG" secondAttribute="centerX" id="MuL-NZ-xtV"/>
+                            <constraint firstItem="nEN-uo-ZgS" firstAttribute="centerY" secondItem="Trv-Bd-8rG" secondAttribute="centerY" id="yXH-Hc-Q9Q"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="V3V-Hc-axb"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="Jj2-4c-KLv"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="G6A-26-STW" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1042.0289855072465" y="120.53571428571428"/>
+        </scene>
+        <!--Crash-->
+        <scene sceneID="pqh-jR-1Vo">
+            <objects>
+                <viewController id="9cg-3i-fAG" customClass="CrashViewController" customModule="BuglyDemo" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="2EB-Zs-bdB">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="24b-cc-NQu">
+                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zhp-Qd-mFp">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="44" id="Nwp-uy-ErQ"/>
+                                        </constraints>
+                                        <state key="normal" title="数组越界"/>
+                                        <connections>
+                                            <action selector="outofRange" destination="9cg-3i-fAG" eventType="touchUpInside" id="vkH-4z-VV8"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f8P-KD-csk">
+                                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                                        <state key="normal" title="2s后调用已销毁对象，会返回上一界面"/>
+                                        <connections>
+                                            <action selector="pointDeinitedObject" destination="9cg-3i-fAG" eventType="touchUpInside" id="xZs-26-gwU"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sVt-h6-QK0">
+                                        <rect key="frame" x="0.0" y="88" width="414" height="44"/>
+                                        <state key="normal" title="未设置生物识别权限"/>
+                                        <connections>
+                                            <action selector="plistWithoutPermission" destination="9cg-3i-fAG" eventType="touchUpInside" id="ew4-tt-pRv"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1am-Ff-AkB">
+                                        <rect key="frame" x="0.0" y="132" width="414" height="44"/>
+                                        <state key="normal" title="调用非可选值对象"/>
+                                        <connections>
+                                            <action selector="pointNilObject" destination="9cg-3i-fAG" eventType="touchUpInside" id="Gny-3H-dxj"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5l9-S7-HV4">
+                                        <rect key="frame" x="0.0" y="176" width="414" height="44"/>
+                                        <state key="normal" title="未设置segue的identifier"/>
+                                        <connections>
+                                            <action selector="segueWithoutIdentifier" destination="9cg-3i-fAG" eventType="touchUpInside" id="XDK-wy-37h"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YCa-pF-EmG">
+                                        <rect key="frame" x="0.0" y="220" width="414" height="44"/>
+                                        <state key="normal" title="未设置cell的identifier"/>
+                                        <connections>
+                                            <action selector="cellWithoutIdentifier" destination="9cg-3i-fAG" eventType="touchUpInside" id="b9N-h9-SeL"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pHk-kx-URU">
+                                        <rect key="frame" x="0.0" y="264" width="414" height="44"/>
+                                        <state key="normal" title="RLModel字段更新"/>
+                                        <connections>
+                                            <action selector="updatedFieldWithoutUpdatingRealm" destination="9cg-3i-fAG" eventType="touchUpInside" id="2iE-Os-jDM"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oKE-Pg-owS">
+                                        <rect key="frame" x="0.0" y="308" width="414" height="44"/>
+                                        <state key="normal" title="递归导致栈溢出"/>
+                                        <connections>
+                                            <action selector="outofStack" destination="9cg-3i-fAG" eventType="touchUpInside" id="YGd-xL-0Gw"/>
+                                        </connections>
+                                    </button>
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Wla-wA-3AJ">
+                                        <rect key="frame" x="0.0" y="352" width="414" height="422"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <connections>
+                                            <outlet property="dataSource" destination="9cg-3i-fAG" id="BHC-d0-EGk"/>
+                                            <outlet property="delegate" destination="9cg-3i-fAG" id="G1l-03-gQL"/>
+                                        </connections>
+                                    </tableView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="sVt-h6-QK0" firstAttribute="height" secondItem="Zhp-Qd-mFp" secondAttribute="height" id="6h7-Vz-Gzs"/>
+                                    <constraint firstItem="5l9-S7-HV4" firstAttribute="height" secondItem="Zhp-Qd-mFp" secondAttribute="height" id="BrF-qq-8dq"/>
+                                    <constraint firstItem="YCa-pF-EmG" firstAttribute="height" secondItem="Zhp-Qd-mFp" secondAttribute="height" id="C85-PI-aja"/>
+                                    <constraint firstItem="f8P-KD-csk" firstAttribute="height" secondItem="Zhp-Qd-mFp" secondAttribute="height" id="Lli-Uo-rIh"/>
+                                    <constraint firstItem="1am-Ff-AkB" firstAttribute="height" secondItem="Zhp-Qd-mFp" secondAttribute="height" id="gC7-ef-MUA"/>
+                                    <constraint firstItem="oKE-Pg-owS" firstAttribute="height" secondItem="Zhp-Qd-mFp" secondAttribute="height" id="lGw-mq-JNF"/>
+                                    <constraint firstItem="pHk-kx-URU" firstAttribute="height" secondItem="Zhp-Qd-mFp" secondAttribute="height" id="mq0-IC-Ha2"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Qq9-hn-pO7" firstAttribute="trailing" secondItem="24b-cc-NQu" secondAttribute="trailing" id="D6q-NG-UyX"/>
+                            <constraint firstItem="24b-cc-NQu" firstAttribute="top" secondItem="Qq9-hn-pO7" secondAttribute="top" id="iAq-La-342"/>
+                            <constraint firstItem="Qq9-hn-pO7" firstAttribute="bottom" secondItem="24b-cc-NQu" secondAttribute="bottom" id="lo8-AK-qWT"/>
+                            <constraint firstItem="24b-cc-NQu" firstAttribute="leading" secondItem="Qq9-hn-pO7" secondAttribute="leading" id="x3r-5B-jqO"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Qq9-hn-pO7"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Crash" id="ZeI-aR-JtY"/>
+                    <connections>
+                        <outlet property="tableView" destination="Wla-wA-3AJ" id="WdG-yV-Jcr"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="NKO-KZ-7Li" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1786" y="121"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="KbR-Tc-5ka">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="QyY-1M-Y23" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="1pl-Dv-edy">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="nCv-Rh-rgX" kind="relationship" relationship="rootViewController" id="N8E-gs-92i"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7NY-6h-B2q" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="131.8840579710145" y="-553.125"/>
+        </scene>
+    </scenes>
+</document>
