@@ -8,13 +8,12 @@
 
 import UIKit
 import RealmSwift
-import LocalAuthentication
 
 class CrashViewModel: NSObject {
     var isNew: Bool = false
 }
 
-class CrashViewController: UIViewController {
+class CrashViewController: UIViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
     var numbers = [Int]()
     var viewModel: CrashViewModel!
     
@@ -36,10 +35,14 @@ class CrashViewController: UIViewController {
     
     //MARK: - 3. 未在info.plist文件设置权限
     @IBAction func plistWithoutPermission() {
-        LAContext().evaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, localizedReason: "User Biometrics")
-        { (success, error) in
-            
-        }
+        let picker = UIImagePickerController()
+        picker.delegate = self
+        picker.sourceType = .camera
+        self.present(picker, animated: true, completion: nil)
+    }
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        
     }
     
     //MARK: - 4. 非可选值为nil时被调用

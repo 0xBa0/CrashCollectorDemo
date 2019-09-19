@@ -13,7 +13,7 @@
         <!--View Controller-->
         <scene sceneID="ptK-Db-f8e">
             <objects>
-                <viewController id="nCv-Rh-rgX" customClass="ViewController" customModule="BuglyDemo" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="nCv-Rh-rgX" customClass="ViewController" customModule="CrashCollectorDemo" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Trv-Bd-8rG">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -42,7 +42,7 @@
         <!--Crash-->
         <scene sceneID="pqh-jR-1Vo">
             <objects>
-                <viewController id="9cg-3i-fAG" customClass="CrashViewController" customModule="BuglyDemo" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="9cg-3i-fAG" customClass="CrashViewController" customModule="CrashCollectorDemo" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="2EB-Zs-bdB">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -69,7 +69,7 @@
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sVt-h6-QK0">
                                         <rect key="frame" x="0.0" y="88" width="414" height="44"/>
-                                        <state key="normal" title="未设置生物识别权限"/>
+                                        <state key="normal" title="未设置相机权限"/>
                                         <connections>
                                             <action selector="plistWithoutPermission" destination="9cg-3i-fAG" eventType="touchUpInside" id="ew4-tt-pRv"/>
                                         </connections>
